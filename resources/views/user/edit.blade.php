@@ -2,6 +2,9 @@
 @section('title', 'Edit user')
 
 @section('content')
+    @if($errors->any())
+        {!! implode('', $errors->all('<div style="color: red;">:message</div>')) !!}
+    @endif
     <form action="{{ route('user.update', $user->id) }}" method="post">
         @csrf
         @method('patch')

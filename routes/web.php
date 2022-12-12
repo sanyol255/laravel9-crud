@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/users', [UserController::class, 'index'])->name('user.index');
+Route::get('/users/show-user/{id}', [UserController::class, 'show'])->name('user.show');
 Route::get('/users/create-user', [UserController::class, 'create'])->name('user.create');
 Route::post('/users/create-user', [UserController::class, 'store'])->name('user.store');
 Route::get('/users/edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
